@@ -32,20 +32,23 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-const humanSelection = getHumanChoice(); 
-const computerSelection = getComputerChoice();
-
 function playGame(){
-    let round
-    let human = humanScore
-    let computer = computerScore
     
-    for(let i = 0; i <= 5; i++){
-       round = playRound(humanSelection, computerSelection)
-       console.log(`Human Score: ${human}`)
-        console.log(`Computer Score: ${computer}`)
+    for(let i = 1; i <= 5; i++){
+        const humanSelection = getHumanChoice(); 
+        const computerSelection = getComputerChoice();
+       
+       console.log(playRound(humanSelection, computerSelection))
+       console.log(`Human Score: ${humanScore}`)
+       console.log(`Computer Score: ${computerScore}`)
     }
-    console.log("Game Over")
+    if(humanScore > computerScore)
+        {
+            console.log("You Won!! Game over")
+        }
+        else{
+            console.log("You Lost!! Game Over")
+        }
 }
 
 playGame()
